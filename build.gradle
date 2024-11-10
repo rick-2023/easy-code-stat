@@ -23,10 +23,10 @@ intellij {
     version = '2023.1'
     type = 'IC'
     plugins = [
-        'com.intellij.java',
-        'org.jetbrains.idea.maven',
-        'org.intellij.intelliLang',
-        'Git4Idea'
+            'com.intellij.java',
+            'org.jetbrains.idea.maven',
+            'org.intellij.intelliLang',
+            'Git4Idea'
     ]
     downloadSources = true
     updateSinceUntilBuild = false
