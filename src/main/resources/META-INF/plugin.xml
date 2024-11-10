@@ -1,8 +1,8 @@
 <idea-plugin>
     <id>com.easy.code.stat</id>
     <name>Easy Code Statistics</name>
-    <vendor>Your Name</vendor>
-    <description>这款 IDEA 代码统计插件是一个高效、便捷的开发助手，专为帮助开发者分析和统计代码量而设计。它能够快速统计项目代码行数、注释比例、文件分布等多项数据，支持多种编程语言和文件格式，提供直观的统计结果展示，帮助开发者深入了解代码结构，优化开发流程。此外，插件还可以按文件类型、包路径等进行分组统计，方便项目管理者进行全面的代码质量和开发进度评估。这款插件轻量且易用，是开发者和团队项目管理的得力工具。</description>
+    <vendor>zrfan</vendor>
+    <description>This IDEA code statistics plugin is an efficient and convenient tool designed to help developers analyze and track code metrics. It quickly calculates metrics such as the number of lines of code, comment ratio, and file distribution across projects, supporting various programming languages and file formats. The plugin provides clear, visualized results, allowing developers to gain insights into code structure and streamline development processes. Additionally, it offers grouped statistics by file type, package path, and more, making it easier for project managers to assess code quality and monitor development progress. Lightweight and user-friendly, this plugin is an invaluable tool for developers and team project management alike.</description>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java</depends>
@@ -19,7 +19,7 @@
         <action id="ShowCodeStatistics" 
                 class="com.easy.code.stat.ShowCodeStatisticsAction" 
                 text="Show Code Statistics" 
-                description="这款 IDEA 代码统计插件是一个高效、便捷的开发助手，专为帮助开发者分析和统计代码量而设计。它能够快速统计项目代码行数、注释比例、文件分布等多项数据，支持多种编程语言和文件格式，提供直观的统计结果展示，帮助开发者深入了解代码结构，优化开发流程。此外，插件还可以按文件类型、包路径等进行分组统计，方便项目管理者进行全面的代码质量和开发进度评估。这款插件轻量且易用，是开发者和团队项目管理的得力工具。"
+                description="This IDEA code statistics plugin is an efficient and convenient tool designed to help developers analyze and track code metrics. It quickly calculates metrics such as the number of lines of code, comment ratio, and file distribution across projects, supporting various programming languages and file formats. The plugin provides clear, visualized results, allowing developers to gain insights into code structure and streamline development processes. Additionally, it offers grouped statistics by file type, package path, and more, making it easier for project managers to assess code quality and monitor development progress. Lightweight and user-friendly, this plugin is an invaluable tool for developers and team project management alike."
                 icon="AllIcons.Actions.Profile">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
         </action>
