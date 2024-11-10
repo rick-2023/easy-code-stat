@@ -2,7 +2,7 @@
     <id>com.easy.code.stat</id>
     <name>Easy Code Statistics</name>
     <vendor>Your Name</vendor>
-    <description>简单易用的代码统计工具，支持实时进度显示和类分析</description>
+    <description>这款 IDEA 代码统计插件是一个高效、便捷的开发助手，专为帮助开发者分析和统计代码量而设计。它能够快速统计项目代码行数、注释比例、文件分布等多项数据，支持多种编程语言和文件格式，提供直观的统计结果展示，帮助开发者深入了解代码结构，优化开发流程。此外，插件还可以按文件类型、包路径等进行分组统计，方便项目管理者进行全面的代码质量和开发进度评估。这款插件轻量且易用，是开发者和团队项目管理的得力工具。</description>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java</depends>
