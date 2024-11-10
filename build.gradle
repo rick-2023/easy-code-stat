@@ -1,0 +1,71 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '1.16.1'
+}
+
+group = 'com.easy.code.stat'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+intellij {
+    version = '2023.1'
+    type = 'IC'
+    plugins = [
+        'com.intellij.java',
+        'org.jetbrains.idea.maven',
+        'org.intellij.intelliLang',
+        'Git4Idea'
+    ]
+    downloadSources = true
+    updateSinceUntilBuild = false
+    sandboxDir = project.rootDir.canonicalPath + "/.sandbox"
+}
+
+patchPluginXml {
+    sinceBuild = '231'
+    untilBuild = '241.*'
+}
+
+runIde {
+    autoReloadPlugins = false
+    jvmArgs = ['-Xmx2048m']
+    systemProperties['idea.log.debug.categories'] = '#com.easy.code.stat'
+    systemProperties['idea.plugins.path'] = project.rootDir.canonicalPath + "/.sandbox/plugins"
+    systemProperties['idea.system.path'] = project.rootDir.canonicalPath + "/.sandbox/system"
+    systemProperties['idea.config.path'] = project.rootDir.canonicalPath + "/.sandbox/config"
+}
+
+buildSearchableOptions {
+    enabled = false
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.register('cleanSandbox', Delete) {
+    delete project.rootDir.canonicalPath + "/.sandbox"
+}
+
+tasks.register('syncDependencies') {
+    dependsOn 'cleanSandbox'
+    dependsOn 'clean'
+    finalizedBy 'build'
+}

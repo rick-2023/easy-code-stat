@@ -1,0 +1,27 @@
+<idea-plugin>
+    <id>com.easy.code.stat</id>
+    <name>Easy Code Statistics</name>
+    <vendor>Your Name</vendor>
+    <description>简单易用的代码统计工具，支持实时进度显示和类分析</description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Code Statistics" 
+                    secondary="true"
+                    icon="AllIcons.Actions.Profile" 
+                    anchor="bottom"
+                    factoryClass="com.easy.code.stat.CodeStatisticsToolWindowFactory"/>
+    </extensions>
+
+    <actions>
+        <action id="ShowCodeStatistics" 
+                class="com.easy.code.stat.ShowCodeStatisticsAction" 
+                text="Show Code Statistics" 
+                description="显示代码统计"
+                icon="AllIcons.Actions.Profile">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin> 
