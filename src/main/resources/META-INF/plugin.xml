@@ -7,12 +7,18 @@
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java</depends>
 
+    <applicationListeners>
+        <listener class="com.easy.code.stat.listeners.PluginUpdateListener"
+                  topic="com.intellij.ide.plugins.DynamicPluginListener"/>
+    </applicationListeners>
+
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow id="Code Statistics" 
                     secondary="true"
                     icon="AllIcons.Actions.Profile" 
                     anchor="bottom"
-                    factoryClass="com.easy.code.stat.CodeStatisticsToolWindowFactory"/>
+                    factoryClass="com.easy.code.stat.CodeStatisticsToolWindowFactory"
+                    dynamic="true"/>
     </extensions>
 
     <actions>

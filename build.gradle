@@ -23,10 +23,9 @@ intellij {
     version = '2023.1'
     type = 'IC'
     plugins = [
-            'com.intellij.java',
-            'org.jetbrains.idea.maven',
-            'org.intellij.intelliLang',
-            'Git4Idea'
+        'com.intellij.java',
+        'org.jetbrains.idea.maven',
+        'org.intellij.intelliLang'
     ]
     downloadSources = true
     updateSinceUntilBuild = false
@@ -36,6 +35,16 @@ intellij {
 patchPluginXml {
     sinceBuild = '231'
     untilBuild = '241.*'
+    pluginDescription = """
+        <p>Easy Code Statistics Plugin</p>
+        <p>Features:</p>
+        <ul>
+            <li>Dynamic plugin updates without IDE restart</li>
+            <li>Code statistics with real-time progress</li>
+            <li>File and class level analysis</li>
+            <li>Unused method detection</li>
+        </ul>
+    """
 }
 
 runIde {
@@ -45,6 +54,8 @@ runIde {
     systemProperties['idea.plugins.path'] = project.rootDir.canonicalPath + "/.sandbox/plugins"
     systemProperties['idea.system.path'] = project.rootDir.canonicalPath + "/.sandbox/system"
     systemProperties['idea.config.path'] = project.rootDir.canonicalPath + "/.sandbox/config"
+    systemProperties['idea.vcs.ignore.disabled'] = 'true'
+    systemProperties['vcs.log.index.disable'] = 'true'
 }
 
 buildSearchableOptions {
